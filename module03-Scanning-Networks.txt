@@ -78,6 +78,9 @@ Drawing Network Diagrams Using Network Topology Mapper
 Checking for Live Systems Using Angry IP Scanner
 	Scanning hosts/ports (Windows tool)
 	
+Email footprinting:
+	Use emailtrackerpro
+	
 Scanning for Network Traffic Going Through a Computer’s Adapter Using IP-Tools
 
 Identify Target System OS with TTL and TCP Window Sizes using Wireshark
