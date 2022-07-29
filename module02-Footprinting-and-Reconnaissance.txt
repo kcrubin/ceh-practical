@@ -41,3 +41,10 @@ Information Gathering Using Metasploit
 	set THREADS 100
 	run
 	hosts
+	
+Gather DNS information:
+	nslookup 
+	>set type=a or cname
+	>www.certifiedhacker.com
+	
+Perform Reverse DNS lookup : use www.yougetsignal.com 
