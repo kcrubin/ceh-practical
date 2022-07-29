@@ -24,6 +24,9 @@ Mirroring Website Using HTTrack Web Site Copier
 Advanced Network Route Tracing Using Path Analyzer Pro
 	Timed trace
 
+Gather wordlist using cewl
+	cewl -d 2 -m 5 www.certifiedhacker.com
+	
 Information Gathering Using Metasploit
 	service postgresql start
 	msfdb init
