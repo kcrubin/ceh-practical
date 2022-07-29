@@ -46,3 +46,77 @@ Enumerating information from Windows and Samba host using Enum4linux
 	enum4linux -u martin -p apple -P 10.10.10.12 (Password Policy Information)
 	enum4linux -u martin -p apple -G 10.10.10.12 (Groups details)
 	enum4linux -u martin -p apple -S 10.10.10.12 (Share Policy Information)
+	
+	
+	
+..........................................................................................................................................................
+
+Enumeration
+
+View NetBIOS Name Table (windows os)
+•	Nbtstat –a 10.10.10.66
+View the contents of the NetBIOS name cache
+•	Nbtstat –c
+Perform NetBIOS Enumeration using an NSE Script(disable firewall for this)
+•	Nmap –sV –v - -script nbstat.nse 10.10.10.66
+•	-sV service versions
+Enumeration of NetBIOS using UDP Scan
+•	Nmap –sU –p 137 - -script nbstat.nse 10.10.10.66
+
+Perform SNMP Enumeration
+
+Check SNMP port status
+•	Nmap –sU –p 161 10.10.10.37
+Perform SNMP Enumeration
+•	Snmp-check 10.10.10.37
+Perform NFS Enumeration
+•	Nmap –p 2049 10.10.10.23
+•	Use: superenum and RPCscan
+Perform LDAP enumeration:
+•	use AD Explorer
+
+Lab5 Perform DNS Enumeration:
+Gather name server info using Dig 
+•	Dig ns www.certifiedhacker.com
+Perform Zone transfer using Dig
+•	Dig @ns1.bluehosts.com www.certifiedhacker.com axfr
+Gather Name server info using nslookup
+•	Nslookup
+•	Set querytype=soa
+•	Certifiedhacker.com
+Perform Zone transfer using nslookup
+•	ls –d ns1.bluehost.com
+Perform DNS Enumeration using DNSSEC Zone Walking
+•	Dnsrecon –d www.certifiedhacker.com –z
+•	-d specified target domain, -z specifies that DNSSEC zone walk be performed with standard enumeration
+
+Perform RPC , SMB and FTP Enumeration using nmap
+Use netscanpro 
+
+Check for open FTP port
+Nmap –p 21 10.10.10.37
+
+Perform RPC Enumeration
+Nmap –T4 –A 10.10.10.37
+-A specifies the ACK flag is set
+-T4 specifies timing template, (0-5)
+
+Perform SMB Enumeration
+Nmap –p 445 –A 10.10.10.37
+
+Perform FTP Enumeration
+Nmap –p 21 –A 10.10.10.37
+
+Using enum4linux
+Test for NETBIOS info
+•	Enum4linux –u martin –p apple –n 10.10.10.37
+Test for user info
+•	Enum4linux –u martin –p apple –U 10.10.10.37
+Test for OS info
+•	Enum4linux –u martin –p apple –o 10.10.10.37
+Test for password policy
+•	Enum4linux –u martin –p apple –P 10.10.10.37
+Test for Group info
+•	Enum4linux –u martin –p apple –G 10.10.10.37
+Test for Share info
+•	Enun4linux –u martin –p apple –S  10.10.10.37
