@@ -51,3 +51,62 @@ Gather DNS information:
 	>www.certifiedhacker.com
 	
 Perform Reverse DNS lookup : use www.yougetsignal.com 
+
+Footprinting a target using Recon-ng
+	>recon-ng
+	>help
+	>marketplace install all
+	>module search
+	>workspaces
+	>workspaces create CEH
+	>workspaces list
+	>db insert domains
+	>certifiedhacker.com
+	>show domains
+	>module load brute
+	>module load recon/domains-hosts/brute hosts
+	>run
+	
+Perform reverse lookup using reverse_resolve module
+	>module load reverse_resolve
+	>run
+	>show hosts
+	>back
+	>module load reporting
+	>module load reporting/html
+	>options set FILENAME /root/Desktop/results.html
+	>options set CREATER Jason
+	>options set CUSTOMER certifiedhacker Networks
+	>run
+	
+Gather Contacts associated with the domain
+	>moudle load recon/domains-contacts/whois_pocs
+	>info
+	>options set SOURCE facebook.com
+	>run
+Check for user existence
+	>modules load recon/profiles-profiles/namechk
+	>options set SOURCE MarkZukerberg
+	>run
+	
+Footprinting using OSRFramework
+	check the target user profile on social networking platforms
+	>usufy.py -n Mark Zukerberg -p twitter facebook youtube
+	>domainfy.py -n eccouncil -t all
+	>searchfy.py : Gathers information about the user on social networking pages
+	>mailfy.py : gathers info about email accounts
+	>phonefy.py : check for the existence of given serices of phones
+	>entify.py : extarcts entities using regex from provided urls
+	
+	
+FOCA:
+	extract metadata of a target domain
+	extract network structure information
+	extract domain info
+	extract https info
+	
+Billcipher
+	dnslookup, whois lookup,zone transfer, http header, port scanner, get robots.txt, 
+	
+Footprinting a target using OSINT Framework
+
