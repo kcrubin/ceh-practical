@@ -6,6 +6,16 @@ Open Source Information Gathering Using Windows Command Line Utilities
 	ping www.moviescope.com –f –l 1472
 	tracert www.moviescope.com
 	
+Finding the HOPS count using TTL
+	ping www.moviescape.com -i 1 -n 1 (start incremeting the value of i)
+	
+Using theHarvester to extract email list.
+	theHarvester -d microsoft.com -l 200 -b baidu
+	where -d target domain, -l number of results, -b data source
+
+Using sherlock to find the details of user
+	python3 sherlock.py satya nadella
+
 Collecting Information About a Target Website Using Firebug
 	Firebug / developer tools
 
