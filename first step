@@ -1,18 +1,20 @@
 My Initial way of approaching Exam/ Vuln CTF Boxes:
-netdiscover -i eth0 — This will help me to get the machines available on our network. [ eth0 may differ if VPN network I will be tun0 ]
+  >netdiscover -i eth0 — This will help me to get the machines available on our network. [ eth0 may differ if VPN network I will be tun0 ]
 Once I get the IP’s I will run my Nmap on all those IP’s.
-nmap -p- 10.10.10.10 [ Any IP ]
-Once I ran the above command I will get all the opened port on that target and then with that open port, I will run another nmap, for example, if port 443,80,53,135,8080,8888 are opened then my nmap command will be.
+  >nmap -p- 10.10.10.10 [ Any IP ]
+Once I ran the above command I will get all the opened port on that target and then with that open port,
+I will run another nmap, for example, if port 443,80,53,135,8080,8888 are opened then my nmap command will be.
 
 4. nmap -p443,80,53,135,8080,8888 -A -O -sV -sC -T4 -oN nmapOutput 10.10.10.10
 
-This will find out the OS version, service version, and ran default nmap script and store the output. Storing output is very important, you may need to refer it many times.
+This will find out the OS version, service version, and ran default nmap script and store the output. 
+Storing output is very important, you may need to refer it many times.
 
 5. While nmap is running I will open all the IPs on browser and will see whether any web service is running on not, if Yes then I will run gobuster or dirb.
 
-gobuster -e -u http://10.10.10.10 -w wordlsit.txt
+  gobuster -e -u http://10.10.10.10 -w wordlsit.txt
 
-dirb http://10.10.10.10 wordlist.txt
+  dirb http://10.10.10.10 wordlist.txt
 
 6. If I find any login page I will try SQLi manually
 
